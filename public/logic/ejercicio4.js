@@ -2,7 +2,7 @@ async function enviarMensajeADiscord(mensaje) {
   const userId = ""; // ID del usuario 
 
   try {
-    const res = await fetch('http://localhost:3000/send-discord', {
+    const res = await fetch('https://discord-3ayj.onrender.com/send-discord', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ mensaje, userId }) // Enviamos el mensaje y el userId
