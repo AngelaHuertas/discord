@@ -7,7 +7,12 @@ const PORT = 3000;
 app.use(cors());
 app.use(express.json());
 
+app.get('/', (req, res) => {
+  res.send('✅ API activa. Usa POST /send-discord para enviar mensajes.');
+});
+
 const WEBHOOK_URL = 'https://discord.com/api/webhooks/1377147466088185968/uFS0VOvBxh8T4-xR41ewWCWlEcnX04pngO9G_O3UGDdCQAAE-00r1s9dzrdnwaXemkCu'; 
+
 
 app.post('/send-discord', async (req, res) => {
   const { mensaje } = req.body;
